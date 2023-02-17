@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  db:
+    container_name: mysql-db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '1234'
+      MYSQL_DATABASE: 'logs'
+      MYSQL_PASSWORD: '1234'
+      
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./backend/db_data:/var/lib/mysql
+
+  backend:
+    container_name: backendProduccion
+    restart: always
+    image: luisbarrera23/backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    links: 
+      - db
+  front:
+    container_name: frontendProduccion
+    restart: always
+    image: luisbarrera23/frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    links: 
+      - backend
+
+  
+volumes:
+  db_data:
