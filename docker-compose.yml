@@ -20,13 +20,17 @@ services:
   backend:
     container_name: backendProduccion
     restart: always
-    image: luisbarrera23/backend
+    image: backend
     ports:
       - "5000:5000"
+    environment:
+      TZ: America/Guatemala
     depends_on:
       - db
     links: 
       - db
+    volumes:
+      - ./backend/Registros:/registros
   front:
     container_name: frontendProduccion
     restart: always
@@ -38,6 +42,14 @@ services:
     links: 
       - backend
 
+  script: 
+    # build: ./script
+    image: sp
+    container_name: scriptProduccion
+    volumes:
+      - ./backend/Registros:/registros
+
   
 volumes:
   db_data:
+  Registros:
