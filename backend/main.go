@@ -3,7 +3,9 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"log"
 	"net/http"
+	"os"
 	"strconv"
 	"time"
 
@@ -58,6 +60,37 @@ func guardarOperacion(datos registros) {
 	}
 	datalogs.Exec()
 	DBconexion.Close()
+	actualizarArchivo(datos)
+
+}
+
+func actualizarArchivo(datos registros) {
+	archivo, err := os.OpenFile("/registros/archivo.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644) //abrimos el archivo en modo append
+	if err != nil {
+		log.Fatal(err) //en caso de error
+	}
+	defer archivo.Close() // comando para que al finalizar el enviroment se cierre el archivo
+	actual := time.Now()
+	actualstring := actual.Format("02/01/2006")
+
+	var operacion string
+
+	if datos.Operacion == "+" {
+		operacion = "suma"
+	} else if datos.Operacion == "-" {
+		operacion = "resta"
+	} else if datos.Operacion == "*" {
+		operacion = "multiplicacion"
+	} else if datos.Operacion == "/" {
+		operacion = "division"
+	} else {
+		operacion = ""
+	}
+	linea := "Numero1: " + datos.Numero1 + "," + "Numero2: " + datos.Numero2 + "," + "Operacion: " + operacion + "," + "Resultado: " + datos.Resultado + "," + "Fecha: " + actualstring + "\n"
+	_, err = archivo.WriteString(linea) //escribimos la linea nueva al final del archivo
+	if err != nil {
+		log.Fatal(err)
+	}
 
 }
 

@@ -18,6 +18,7 @@ services:
       - ./backend/db_data:/var/lib/mysql
 
   backend:
+    build: ./backend
     container_name: backendProduccion
     restart: always
     image: backend
@@ -32,9 +33,10 @@ services:
     volumes:
       - ./backend/Registros:/registros
   front:
+    build: ./frontend
     container_name: frontendProduccion
     restart: always
-    image: luisbarrera23/frontend
+    image: frontend
     ports:
       - "3000:3000"
     depends_on:
@@ -43,8 +45,9 @@ services:
       - backend
 
   script: 
-    # build: ./script
+    build: ./scripts
     image: sp
+    # restart: always
     container_name: scriptProduccion
     volumes:
       - ./backend/Registros:/registros

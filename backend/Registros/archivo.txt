@@ -1,5 +1,10 @@
-hola esta es una prueba de lectura
-Luis Angel Barrera Velásquez 
-202010223
-
-USAC FACULTAD DE INGENIERIA
+Numero1: 20,Numero2: 50,Operacion: suma,Resultado: 70,Fecha: 18/02/2023
+Numero1: 80,Numero2: 50,Operacion: multiplicacion,Resultado: 4000,Fecha: 18/02/2023
+Numero1: 80,Numero2: 50,Operacion: suma,Resultado: 130,Fecha: 18/02/2023
+Numero1: 80,Numero2: 50,Operacion: resta,Resultado: 30,Fecha: 18/02/2023
+Numero1: 80,Numero2: 50,Operacion: multiplicacion,Resultado: 4000,Fecha: 18/02/2023
+Numero1: 80,Numero2: 50,Operacion: division,Resultado: 1.6,Fecha: 18/02/2023
+Numero1: 80,Numero2: 0,Operacion: division,Resultado: error,Fecha: 18/02/2023
+Numero1: 80,Numero2: 0,Operacion: division,Resultado: error,Fecha: 18/02/2023
+Numero1: 80,Numero2: 0,Operacion: resta,Resultado: 80,Fecha: 18/02/2023
+Numero1: 20,Numero2: 9,Operacion: suma,Resultado: 29,Fecha: 19/02/2023
