@@ -325,4 +325,14 @@ PRIMARY KEY (id)
 
 Con la tabla creada ya funciona de manera correcta todo el proyecto de diferentes contenedores. 
 
+## Reportes 
 
+El contenedor de reportes es el de ubuntu el cual el contenedor al momento de ejecutar el archivo *docker-compose.yml* se llama scriptProduccion por lo que debemos acceder a el con el siguiente comando: 
+
+```
+sudo docker logs scriptProduccion
+```
+
+De esta forma debera enseñar los reportes de la siguiente manera por medio de la consola:
+
+![Reportes](./imagenes/rep.png)

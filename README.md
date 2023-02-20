@@ -1,0 +1,2 @@
+# REPOSITORIO GENERAL DE SISTEMAS OPERATIVOS 1
+# Luis Angel Barrera Velásquez

@@ -1,0 +1,5 @@
+Numero1: 20,Numero2: 80,Operacion: suma,Resultado: 100,Fecha: 19/02/2023
+Numero1: 20,Numero2: 80,Operacion: resta,Resultado: -60,Fecha: 19/02/2023
+Numero1: 20,Numero2: 80,Operacion: multiplicacion,Resultado: 1600,Fecha: 19/02/2023
+Numero1: 20,Numero2: 80,Operacion: division,Resultado: 0.25,Fecha: 19/02/2023
+Numero1: 20,Numero2: 0,Operacion: division,Resultado: error,Fecha: 19/02/2023
