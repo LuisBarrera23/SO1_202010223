@@ -72,6 +72,8 @@ Para la realizacion de contenedores de tiene que tener instalado docker. A conti
 
 ### Imagen del Frontend [Repositorio](https://hub.docker.com/repository/docker/luisbarrera23/frontend_practica1_202010223/general)
 
+<img src="https://miro.medium.com/max/891/1*qXAPRpbzfCMdLQ_z__k3_Q.png" alt="arquitectura" width="200">
+
 primero que nada se debe crear un archivo *Dockerfile* con el siguiente contenido dentro de la carpeta del Frontend: 
 
 ```Dockerfile
@@ -118,6 +120,8 @@ sudo docker push luisbarrera23/frontend_practica1_202010223
 
 ## Imagen del Backend [Repositorio](https://hub.docker.com/repository/docker/luisbarrera23/backend_practica1_202010223/general)
 
+<img src="https://b1410584.smushcdn.com/1410584/wp-content/uploads/2022/01/Picture5-1024x576.png?lossy=0&strip=1&webp=1" alt="arquitectura" width="200">
+
 primero que nada se debe crear un archivo *Dockerfile* con el siguiente contenido dentro de la carpeta del Backend: 
 
 ```Dockerfile
@@ -156,6 +160,8 @@ sudo docker push luisbarrera23/backend_practica1_202010223
 
 
 ## Imagen del Script [Repositorio](https://hub.docker.com/repository/docker/luisbarrera23/script_practica1_202010223/general)
+
+<img src="https://2.bp.blogspot.com/-cX0i14JKZD0/W6tD2EBJg6I/AAAAAAAAChg/FXvV6lLr5KcKozaRpfjKA4V11fVs-pHgQCLcBGAs/s1600/docker-y-ubuntu.png" alt="arquitectura" width="200">
 
 primero que nada se debe crear un archivo *Dockerfile* con el siguiente contenido dentro de la carpeta del *scripts*: 
 
