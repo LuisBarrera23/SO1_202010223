@@ -17,4 +17,6 @@ A continuacion se explicara cada una de las capas del proyecto:
 
 Para el frontend fue utilizado React en la version node 16.19.0 creando el proyecto con el comando: 
 
-```creat-react-app myapp```
+```
+creat-react-app myapp
+```
