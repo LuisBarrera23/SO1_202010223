@@ -18,10 +18,10 @@ services:
       - ./backend/db_data:/var/lib/mysql
 
   backend:
-    build: ./backend
+    #build: ./backend
     container_name: backendProduccion
     restart: always
-    image: backend
+    image: luisbarrera23/backend_practica1_202010223
     ports:
       - "5000:5000"
     environment:
@@ -33,10 +33,10 @@ services:
     volumes:
       - ./backend/Registros:/registros
   front:
-    build: ./frontend
+    #build: ./frontend
     container_name: frontendProduccion
     restart: always
-    image: frontend
+    image: luisbarrera23/frontend_practica1_202010223
     ports:
       - "3000:3000"
     depends_on:
@@ -45,10 +45,12 @@ services:
       - backend
 
   script: 
-    build: ./scripts
-    image: sp
+    #build: ./scripts
+    image: luisbarrera23/script_practica1_202010223
     # restart: always
     container_name: scriptProduccion
+    environment:
+      TZ: America/Guatemala
     volumes:
       - ./backend/Registros:/registros
 
