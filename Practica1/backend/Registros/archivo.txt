@@ -3,3 +3,6 @@ Numero1: 20,Numero2: 80,Operacion: resta,Resultado: -60,Fecha: 19/02/2023
 Numero1: 20,Numero2: 80,Operacion: multiplicacion,Resultado: 1600,Fecha: 19/02/2023
 Numero1: 20,Numero2: 80,Operacion: division,Resultado: 0.25,Fecha: 19/02/2023
 Numero1: 20,Numero2: 0,Operacion: division,Resultado: error,Fecha: 19/02/2023
+Numero1: 90,Numero2: 50,Operacion: multiplicacion,Resultado: 4500,Fecha: 20/02/2023
+Numero1: 70,Numero2: 2,Operacion: division,Resultado: 35,Fecha: 20/02/2023
+Numero1: 100,Numero2: 0,Operacion: division,Resultado: error,Fecha: 20/02/2023
