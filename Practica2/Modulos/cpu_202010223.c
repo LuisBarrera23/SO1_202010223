@@ -60,7 +60,8 @@ static int escribir_archivo(struct seq_file *f, void *v){
     int estado = cpu->__state;
     int consumoRAM = 0;
     if (cpu->mm) {
-        consumoRAM = (cpu->mm->total_vm * PAGE_SIZE) / 1024;
+        consumoRAM = get_mm_rss(cpu->mm);
+        consumoRAM *= PAGE_SIZE;
     }
 
     seq_printf(f, "{");

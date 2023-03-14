@@ -22,14 +22,15 @@ services:
     container_name: backendProduccion
     restart: always
     image: luisbarrera23/backend_practica2_202010223
-    ports:
-      - "5000:5000"
     environment:
       TZ: America/Guatemala
     depends_on:
       - db
     links: 
       - db
+    volumes:
+      - /etc/passwd:/etc/passwd:ro
+      - /proc:/host/proc:ro
 
 volumes:
   db_data:
