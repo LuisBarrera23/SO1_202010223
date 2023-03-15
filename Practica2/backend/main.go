@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"math"
@@ -43,23 +44,28 @@ func CalcularPorcentajeMemoria(jsonString string) (string, error) {
 	return string(porcentajeStringSalida), nil
 }
 
-// func conectarBaseDeDatos() (conexion *sql.DB) {
-// 	nombreContenedor := "mysql-db"
-// 	nombreDB := "logs"
-// 	driver := "mysql"
-// 	usuario := "root"
-// 	contrasena := "1234"
-// 	puerto := "3306"
+func conectarBaseDeDatos() (conexion *sql.DB) {
+	nombreContenedor := "mysql-db"
+	nombreDB := "logs"
+	driver := "mysql"
+	usuario := "root"
+	contrasena := "1234"
+	puerto := "3306"
 
-// 	conexion, err := sql.Open(driver, usuario+":"+contrasena+"@tcp("+nombreContenedor+":"+puerto+")/"+nombreDB)
-// 	if err != nil {
-// 		panic(err.Error())
-// 	}
-// 	return conexion
-// }
+	conexion, err := sql.Open(driver, usuario+":"+contrasena+"@tcp("+nombreContenedor+":"+puerto+")/"+nombreDB)
+	if err != nil {
+		panic(err.Error())
+	}
+	return conexion
+}
 
 func main() {
-	// DBconexion := conectarBaseDeDatos()
+	DBconexion := conectarBaseDeDatos()
+	datalogs, err := DBconexion.Prepare("INSERT INTO registros(id,ram,cpu) VALUES(1,'ram_inicio_go','cpu_inicio_go') ON DUPLICATE KEY UPDATE ram = 'ram_202010223', cpu = 'cpu_202010223';")
+	if err != nil {
+		panic(err.Error())
+	}
+	datalogs.Exec()
 	for {
 
 		cmd2 := exec.Command("sh", "-c", "cat /host/proc/ram_202010223")
@@ -94,8 +100,13 @@ func main() {
 		}
 		fmt.Println(jsonSTR)
 		fmt.Println("--------------------------------------------------------:")
-
+		datalogs, err := DBconexion.Prepare("INSERT INTO registros(id,ram,cpu) VALUES(1,'" + porcentajeString + "','" + jsonSTR + "') ON DUPLICATE KEY UPDATE ram = '" + porcentajeString + "', cpu = '" + jsonSTR + "';")
+		if err != nil {
+			panic(err.Error())
+		}
+		datalogs.Exec()
 		time.Sleep(1 * time.Second)
+
 	}
 }
 
