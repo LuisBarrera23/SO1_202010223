@@ -7,11 +7,17 @@ services:
     container_name: apiProduccion
     restart: always
     image: luisbarrera23/api_practica2_202010223
-    depends_on:
-      - db
-    links: 
-      - db
     ports:
-      - '3000:3000'
-    volumes:
-      - ./api/datos:/datos
+      - '5000:5000'
+
+  front:
+    build: ./frontend
+    container_name: frontendProduccion
+    restart: always
+    image: luisbarrera23/frontend_practica1_202010223
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    links: 
+      - api

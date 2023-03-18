@@ -20,7 +20,7 @@
 }
 
 .fondo3{
-  background-color: #ffffff;
+  background-color: #f9f4f4e8;
   width: 1100px;
   height: auto;
   border-radius: 20px;
@@ -79,4 +79,48 @@
 
 .inputmod {
   font-size: '30px';
+}
+
+
+.process-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #000000;
+  background-color: #002aff;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.process-counter h2 {
+  margin-bottom: 10px;
+}
+
+.process-counter-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.process-counter-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #0a0a0a;
+  margin-right: 10px;
+}
+
+.process-counter-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.process-counter-value {
+  font-size: 1.2em;
+  font-weight: bold;
 }

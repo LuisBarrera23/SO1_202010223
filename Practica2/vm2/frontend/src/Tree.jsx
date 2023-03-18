@@ -29,7 +29,7 @@ import 'react-treeview/react-treeview.css';
         </TreeView>
       ));
   
-    return <div style={{fontSize:20}}>{renderTree(props.data)}</div>;
+    return <div style={{fontSize:22}}>{renderTree(props.data)}</div>;
   }
   
 

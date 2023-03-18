@@ -15,6 +15,6 @@ RUN npm install
 COPY . .
 
 #Puerto a exponer
-EXPOSE 3000
+EXPOSE 5000
 
 CMD ["npm", "start"]
