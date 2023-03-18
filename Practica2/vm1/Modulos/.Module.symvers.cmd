@@ -1,1 +1,0 @@
-cmd_/home/angel/Documentos/Repositorios/SO1_Practica1_202010223/Practica2/vm1/Modulos/Module.symvers := sed 's/\.ko$$/\.o/' /home/angel/Documentos/Repositorios/SO1_Practica1_202010223/Practica2/vm1/Modulos/modules.order | scripts/mod/modpost -m -a  -o /home/angel/Documentos/Repositorios/SO1_Practica1_202010223/Practica2/vm1/Modulos/Module.symvers -e -i Module.symvers   -T -
