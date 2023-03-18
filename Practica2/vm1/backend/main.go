@@ -45,7 +45,7 @@ func CalcularPorcentajeMemoria(jsonString string) (string, error) {
 }
 
 func conectarBaseDeDatos() (conexion *sql.DB) {
-	nombreContenedor := "mysql-db"
+	nombreContenedor := "35.192.76.249"
 	nombreDB := "logs"
 	driver := "mysql"
 	usuario := "root"
@@ -139,6 +139,20 @@ func actualizarUsuario(jsonStr string) (string, error) {
 		ram /= float64(totalRAM)
 		ram = math.Round(ram*100) / 100
 		proceso.(map[string]interface{})["ram"] = fmt.Sprintf("%.2f", ram*100)
+
+		estado := proceso.(map[string]interface{})["estado"].(string)
+		nuevo := ""
+
+		if estado == "1" || estado == "1026" {
+			nuevo = "suspendido"
+		} else if estado == "0" {
+			nuevo = "ejecutandose"
+		} else if estado == "4" {
+			nuevo = "zombie"
+		} else if estado == "8" {
+			nuevo = "detenido"
+		}
+		proceso.(map[string]interface{})["estado"] = nuevo
 
 	}
 

@@ -1,12 +1,14 @@
 const express = require("express");
 const dbConn = require('./db.js');
+const cors = require("cors");
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
-  res.send("Server on port 3000");
+  res.send("Server on port 5000");
 });
 
 app.get("/info", function (req, res) {
@@ -16,7 +18,7 @@ app.get("/info", function (req, res) {
 app.get("/all", function (req, res) {
   dbConn.connect(function (err) {
     if (err) throw err;
-    var sql = `SELECT cpu FROM registros WHERE id = 1;`;
+    var sql = `SELECT * FROM registros WHERE id = 1;`;
     dbConn.query(sql, function (err, result) {
       if (err) throw err;
       res.send(result);
@@ -24,15 +26,5 @@ app.get("/all", function (req, res) {
   });
 });
 
-app.post("/add", function (req, res) {
-  dbConn.connect(function (err) {
-    if (err) throw err;
-    var sql = `INSERT INTO User(name, id) VALUE('${req.body.name}', ${req.body.id})`;
-    dbConn.query(sql, function (err, result) {
-      if (err) throw err;
-      res.send(result);
-    });
-  });
-});
 
-app.listen(3000, () => console.log("Server on port 5000"));
+app.listen(5000, () => console.log("Server on port 5000"));
