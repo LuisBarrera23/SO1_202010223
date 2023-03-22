@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   async function logs() {
-    const response = await fetch('http://localhost:5000/all');
+    const response = await fetch('http://34.125.15.40:5000/all');
     const data = await response.json();
 
     // console.log(data); // imprime todo el objeto
