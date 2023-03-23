@@ -6,7 +6,7 @@ services:
     build: ./api
     container_name: apiProduccion
     restart: always
-    image: luisbarrera23/api_practica2_202010223
+    image: api_practica2_202010223
     ports:
       - '5000:5000'
 
@@ -14,7 +14,7 @@ services:
     build: ./frontend
     container_name: frontendProduccion
     restart: always
-    image: luisbarrera23/frontend_practica1_202010223
+    image: frontend_practica2_202010223
     ports:
       - "3000:3000"
     depends_on:
